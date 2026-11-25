@@ -1,0 +1,316 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* Header */
+header {
+    background-color: #0751ae;
+    padding: 1rem 2%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h2 {
+    font-size: 1.4rem;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 3%;
+    min-height: 18rem;
+    background-color: #f4f4f4;
+}
+
+.hero-content {
+    flex: 1;
+    animation: slideIn 1s ease;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: #ed725c;
+    margin-bottom: 1rem;
+    animation: colorChange 3s infinite alternate;
+}
+
+.hero-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.profile {
+    flex: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.4rem solid #d5e6ff;
+}
+
+/* Common Sections */
+.section {
+    padding: 2rem 3%;
+}
+
+.section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.section p {
+    line-height: 1.6;
+}
+
+/* Skills - CSS Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-card {
+    background-color: #0751ae;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.skill-card small {
+    font-weight: normal;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background-color: #ed725c;
+}
+
+/* Projects - CSS Grid */
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 70%;
+    margin: 1rem auto;
+}
+
+.project-card {
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    min-height: 8rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    width: 35%;
+    min-width: 17rem;
+    margin: 2rem auto;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.contact-form label {
+    font-size: 0.85rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.6rem;
+    border: 1px solid #aaa;
+    border-radius: 0.2rem;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 4rem;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #0751ae;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ed725c;
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background-color: #0751ae;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+/* Back to Top */
+.back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 2rem 1rem 1rem auto;
+    background-color: #0751ae;
+    color: white;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes colorChange {
+    from {
+        color: #ed725c;
+    }
+    to {
+        color: #0751ae;
+    }
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 4%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .projects-container {
+        max-width: 90%;
+    }
+
+    .contact-form {
+        width: 60%;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-container {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
